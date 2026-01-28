@@ -13,10 +13,22 @@ type Task = {
 }
 
 export const TaskContainer = () => {
+
+    const [taskList, setTaskList] = useState<Task[]>([]);
+
+    const addTask = (title: string) => {
+        const newTask : Task = {
+            id: new Date().getTime(),
+            title: title,
+            completed: false
+        }
+        setTaskList([newTask, ...taskList])
+    }
+
     return (
         <main className="p-4  flex flex-col gap-6">
             <Header/>
-            <TaskInput/>
+            <TaskInput addTask={addTask}/>
             <TaskList/>
             <Footer/>
         </main>
