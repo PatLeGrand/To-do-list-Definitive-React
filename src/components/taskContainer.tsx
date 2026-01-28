@@ -4,6 +4,13 @@ import {Header} from "./header/header.tsx";
 import {TaskInput} from "./taskInput/taskInput.tsx";
 import {TaskList} from "./taskList/taskList.tsx";
 import {Footer} from "./footer/footer.tsx";
+import {useState} from "react";
+
+type Task = {
+    id: number;
+    title: string;
+    completed: boolean;
+}
 
 export const TaskContainer = () => {
     return (
